@@ -1,26 +1,8 @@
 #include <iostream>
 #include "multiply.h"
 
-int multiply(int a, int b) {
-	return a * b;
-}
 
-void multiOut(int a, int b) {
-	std::cout << multiply(a, b) << std::endl;
-}
-
-void increase(int& a){
-	a++;
-}
-
-void increas(int a) {
-	a++;
-}
-
-void duplicate() {
-}
-
-
+/// Class ---------------------------------------------------------------------------------------------------------
 
 class object {
 
@@ -52,7 +34,7 @@ public:
 		std::cout << "vir" << std::endl;
 	}
 
-	virtual void speak() = 0;
+	//virtual void speak() = 0;
 };
 
 class thi : public object {
@@ -63,11 +45,23 @@ public:
 		std::cout << "get vir" << std::endl;
 	}
 
-	virtual void speak() override {
-		printf("say something!");
+	//virtual void speak() override {
+	//	printf("say something!");
+	//}
+};
+
+class human {
+public:
+	static int age;
+	human () {}
+	static void say() {
+		std::cout << "say!" << std::endl;
 	}
 };
 
+
+
+// Struct ---------------------------------------------------------------------------------------------------------
 
 struct stc {
 	static int x, y;
@@ -85,11 +79,34 @@ struct stc {
 int stc::x;
 int stc::y;
 
+// enum ---------------------------------------------------------------------------------------------------------
 
 enum letters {
 	A,B,C
 };
 
+
+// methods ---------------------------------------------------------------------------------------------------------
+int multiply(int a, int b) {
+	return a * b;
+}
+
+void multiOut(int a, int b) {
+	std::cout << multiply(a, b) << std::endl;
+}
+
+void increase(int& a) {
+	a++;
+}
+
+void increas(int a) {
+	a++;
+}
+
+void duplicate() {
+}
+
+int human::age = 1;
 
 int main() {
 
@@ -203,11 +220,14 @@ int main() {
 	thing1.printInheri();
 	printf("------------ inheriends\n");
 
-	thing1.vir();
-
-	obj1.speak();
-	thing1.speak();
-
-
+	
+	human h1;
+	human h2;
+	h1.age = 10;
+	h2.age = 3;
+	printf("here: \n");
+	std::cout << h1.age << h2.age<< std::endl;
+	h1.say();
+	human::say();
 
 }
