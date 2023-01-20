@@ -5,6 +5,10 @@
 #include<algorithm>
 #include <string>
 #include <deque>
+#include <stack>
+#include <queue>
+#include <list>
+#include <set>
 
 using namespace std;
 
@@ -310,14 +314,77 @@ int main() {
 
 
 	deque<int> d1; 
-	for (int i = 0; i < 10;i++)
-		d1.push_back(i);
-	
+	d1.push_back(111);
+	d1.push_front(222);
+	d1.push_back(333);
+	d1.push_front(444);
 	for (int i = 0; i < d1.size();i++)
 		cout << d1[i] << endl;
+	cout << " " << endl;
+	sort(d1.begin(), d1.end());
+	for (int i = 0; i < d1.size();i++)
+		cout << d1[i] << endl;
+	cout << " " << endl;
+	d1.pop_front();
+	d1.pop_back();
+	for (int i = 0; i < d1.size();i++)
+		cout << d1[i] << endl;
+	printf("--------------- deque ends\n");
 
 
+	stack<int> st1;
+	st1.push(1);
+	st1.push(2);
+	st1.push(3);
+	while (!st1.empty()) {
+		cout << st1.top() << endl;
+		st1.pop();
+	}
+	printf("--------------- deque ends\n");
 
 
+	queue<int> q1;
+	q1.push(1);
+	q1.push(2);
+	q1.push(3);
+	q1.push(4);
+	
+	while (!q1.empty()) {
+		cout << "front: " << q1.front() << " back " << q1.back() << endl;
+		q1.pop();
+	}
+	printf("--------------- queue ends\n");
+
+	list<int> ls1;
+	ls1.push_back(1);
+	ls1.push_back(2);
+	list<int> ls2(ls1.begin(),ls1.end());
+	for (list<int>::const_iterator it = ls2.begin(); it != ls2.end(); it++ ) {
+		cout << *it << endl;
+	}
+	list<int>::iterator it = ls2.begin();
+	ls2.insert(++it,100);
+	ls2.erase(it);
+	cout << ls2.front() << endl;
+	cout << ls2.back() << endl;
+	ls2.reverse();
+	ls2.sort();
+	printf("--------------- list ends\n");
+
+	set<int> stt1;
+	stt1.insert(11);
+	stt1.insert(13);
+	stt1.insert(13);
+	set<int> stt2(stt1);
+	stt1.erase(11);
+	stt1.clear();
+
+	set<int>::iterator poss = stt2.find(11);
+	if (poss != stt2.end())
+		cout << "found" << endl;
+	
+	cout << stt2.count(13) << endl;
+
+	printf("--------------- set ends\n");
 
 }
