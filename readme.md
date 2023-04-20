@@ -6,4 +6,4 @@ While the repository may appear disorganized, it was a result of my decision to 
 Although I used this repository for practice, it is not polished, so I won't push anymore for saving time in organizing, and my notes in Vaults offer a more refined and coherent studying experience.
 
 
-### Here: [Cpp notes](https://github.com/JasperZhang121/Vaults/tree/main/C%2B%2B)
+### Here: [Cpp notes](https://github.com/JasperZhang121/Vaults/tree/main/Programming%20Languages/C%2B%2B)
